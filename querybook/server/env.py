@@ -82,6 +82,7 @@ class QuerybookSettings(object):
 
     # Authentication
     AUTH_BACKEND = get_env_config("AUTH_BACKEND")
+    SSL_CERT_FILE = get_env_config("SSL_CERT_FILE")
     LOGS_OUT_AFTER = int(get_env_config("LOGS_OUT_AFTER"))
 
     OAUTH_CLIENT_ID = get_env_config("OAUTH_CLIENT_ID")
@@ -165,11 +166,3 @@ class QuerybookSettings(object):
     GITHUB_REPO_NAME = get_env_config("GITHUB_REPO_NAME")
     GITHUB_BRANCH = get_env_config("GITHUB_BRANCH")
     GITHUB_CRYPTO_SECRET = get_env_config("GITHUB_CRYPTO_SECRET")
-
-    # Cache Control
-    CACHE_CONTROL_MAX_AGE = int(
-        get_env_config("CACHE_CONTROL_MAX_AGE") or "604800"
-    )  # 7 days
-    CACHE_CONTROL_STALE_WHILE_REVALIDATE = int(
-        get_env_config("CACHE_CONTROL_STALE_WHILE_REVALIDATE") or "86400"
-    )  # 1 day

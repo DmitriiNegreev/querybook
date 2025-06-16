@@ -18,6 +18,9 @@ from logic.user import (
 )
 from models.user import User
 
+ldap.set_option(ldap.OPT_X_TLS_REQUIRE_CERT, ldap.OPT_X_TLS_DEMAND)
+ldap.set_option(ldap.OPT_X_TLS_CACERTFILE, QuerybookSettings.SSL_CERT_FILE)
+
 LOG = get_logger(__file__)
 
 login_manager = QuerybookLoginManager()
